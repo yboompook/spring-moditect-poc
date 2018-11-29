@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>test</groupId>
+    <artifactId>install</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <packaging>jar</packaging>
+
+        <properties>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <maven.compiler.source>11</maven.compiler.source>
+            <maven.compiler.target>11</maven.compiler.target>
+            <mainClass>install.WindowsStart</mainClass>
+            <moduleName>install</moduleName>
+        </properties>
+
+        <dependencies>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>1.4.197</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.9.7</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>2.9.7</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>2.9.7</version>
+            </dependency>
+            <!--<dependency>
+                <groupId>org.hibernate.common</groupId>
+                <artifactId>hibernate-commons-annotations</artifactId>
+                <version>5.1.0.Final</version>
+            </dependency>-->
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>2.0.1.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>1.9.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.9.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>2.11.1</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>2.11.1</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>5.1.3.RELEASE</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jcl</artifactId>
+                <version>5.1.3.RELEASE</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>5.1.3.RELEASE</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>5.1.3.RELEASE</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>5.1.3.RELEASE</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>5.1.3.RELEASE</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>5.1.3.RELEASE</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>2.1.3.RELEASE</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-dbcp2</artifactId>
+                <version>2.5.0</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>2.4.0-b180830.0359</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>5.3.7.Final</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>5.3.7.Final</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>javax.persistence-api</artifactId>
+                <version>2.2</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!--<dependency>
+                <groupId>javax.transaction</groupId>
+                <artifactId>javax.transaction-api</artifactId>
+                <version>1.3</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>-->
+
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>1.9.3</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!--<dependency>-->
+            <!--<groupId>javax.management</groupId>-->
+            <!--<artifactId>jmx</artifactId>-->
+            <!--<version>1.2.1</version>-->
+            <!--<exclusions>-->
+            <!--<exclusion>-->
+            <!--<groupId>commons-logging</groupId>-->
+            <!--<artifactId>commons-logging</artifactId>-->
+            <!--</exclusion>-->
+            <!--</exclusions>-->
+            <!--</dependency>-->
+
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-base</artifactId>
+                <version>11.0.1</version>
+                <classifier>win</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.openjfx</groupId>
+                        <artifactId>javafx-swing</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-graphics</artifactId>
+                <version>11.0.1</version>
+                <classifier>win</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.openjfx</groupId>
+                        <artifactId>javafx-swing</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-controls</artifactId>
+                <version>11.0.1</version>
+                <classifier>win</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.openjfx</groupId>
+                        <artifactId>javafx-swing</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-swing</artifactId>
+                <version>11.0.1</version>
+                <classifier>win</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.openjfx</groupId>
+                        <artifactId>javafx-swing</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>3.2.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>antlr</groupId>
+                <artifactId>antlr</artifactId>
+                <version>2.7.7</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.bytebuddy</groupId>
+                <artifactId>byte-buddy</artifactId>
+                <version>1.9.5</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>2.6.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.activation</groupId>
+                <artifactId>javax.activation-api</artifactId>
+                <version>1.2.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.25</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.spec.javax.transaction</groupId>
+                <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+                <version>1.1.1.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>2.1.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.logging</groupId>
+                <artifactId>jboss-logging</artifactId>
+                <version>3.3.2.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss</groupId>
+                <artifactId>jandex</artifactId>
+                <version>2.0.5.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml</groupId>
+                <artifactId>classmate</artifactId>
+                <version>1.4.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>3.24.0-GA</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate.common</groupId>
+                <artifactId>hibernate-commons-annotations</artifactId>
+                <version>5.1.0.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>1.3.2</version>
+            </dependency>
+
+        </dependencies>
+
+        <build>
+            <sourceDirectory>src</sourceDirectory>
+            <resources>
+                <resource>
+                    <directory>src</directory>
+                    <excludes>
+                        <exclude>**/*.java</exclude>
+                    </excludes>
+                    <includes>
+                        <include>**/*.exe</include>
+                        <include>**/*.ini</include>
+                        <include>**/*.properties</include>
+                    </includes>
+                </resource>
+            </resources>
+
+            <plugins>
+        <!--<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.0</version>
+            <configuration>
+                <compilerArgs>
+                    <arg>&#45;&#45;add-reads install=spring.core</arg>
+                </compilerArgs>
+                <source>11</source>
+                <target>11</target>
+            </configuration>
+        </plugin>-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.0</version>
+                    <configuration>
+                        <release>11</release>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.ow2.asm</groupId>
+                            <artifactId>asm</artifactId>
+                            <version>6.2.1</version> <!-- Use newer version of ASM -->
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>1.6.0</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>exec</goal>
+                            </goals>
+                            <configuration>
+                                <executable>${java.home}/bin/java</executable>
+                                <arguments>
+                                    <argument>--module-path</argument>
+                                    <argument>
+                                        ${project.build.directory}/modules
+                                    </argument>
+                                    <argument>--module</argument>
+                                    <argument>${moduleName}/${mainClass}</argument>
+                                </arguments>
+                            </configuration>
+                        </execution>
+                    </executions>
+
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <configuration>
+                        <outputDirectory>
+                            ${project.build.directory}/modules
+                        </outputDirectory>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.moditect</groupId>
+                    <artifactId>moditect-maven-plugin</artifactId>
+                    <version>1.0.0.Beta1</version>
+                    <executions>
+                        <execution>
+                            <id>add-module-info-to-dependencies</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>add-module-info</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${project.build.directory}/modules</outputDirectory>
+                                <overwriteExistingFiles>true</overwriteExistingFiles>
+                                <modules>
+                                    <module>
+                                        <artifact>
+                                            <groupId>javax.annotation</groupId>
+                                            <artifactId>javax.annotation-api</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module java.annotation {
+                                            exports javax.annotation;
+                                            exports javax.annotation.security;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- java.annotation -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.javassist</groupId>
+                                            <artifactId>javassist</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module javassist {
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>javax.persistence</groupId>
+                                            <artifactId>javax.persistence-api</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module java.persistence {
+                                            exports javax.persistence;
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>com.fasterxml</groupId>
+                                            <artifactId>classmate</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module com.fasterxml.classmate {
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.jboss</groupId>
+                                            <artifactId>jandex</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module jandex {
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.jboss.logging</groupId>
+                                            <artifactId>jboss-logging</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module jboss.logging {
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.dom4j</groupId>
+                                            <artifactId>dom4j</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module dom4j {
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.apache.commons</groupId>
+                                            <artifactId>commons-dbcp2</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module commons.dbcp2 {
+                                            requires java.management;
+                                            requires java.sql;
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.jboss.spec.javax.transaction</groupId>
+                                            <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module org.jboss.spec.javax.transaction {
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>commons-beanutils</groupId>
+                                            <artifactId>commons-beanutils</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module commons.beanutils {
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.slf4j</groupId>
+                                            <artifactId>slf4j-api</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module slf4j.api {
+                                            opens org.slf4j to spring.data.commons;
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>javax.activation</groupId>
+                                            <artifactId>javax.activation-api</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module javax.activation {
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.apache.commons</groupId>
+                                            <artifactId>commons-pool2</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module commons.pool {
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>net.bytebuddy</groupId>
+                                            <artifactId>byte-buddy</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module bytebuddy {
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>antlr</groupId>
+                                            <artifactId>antlr</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module antlr {
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>commons-collections</groupId>
+                                            <artifactId>commons-collections</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module commons.collections {
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>com.h2database</groupId>
+                                            <artifactId>h2</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module h2 {
+                                            requires java.sql;
+                                            exports org.h2;
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.apache.logging.log4j</groupId>
+                                            <artifactId>log4j-core</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module org.apache.logging.log4j.core {
+                                            requires org.apache.logging.log4j;
+                                            exports org.apache.logging.log4j.core;
+                                            }
+                                        </moduleInfoSource>
+                                    </module>
+
+
+                                    <module>
+                                        <artifact>
+                                            <groupId>com.fasterxml.jackson.core</groupId>
+                                            <artifactId>jackson-core</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module com.fasterxml.jackson.core {
+                                            exports com.fasterxml.jackson.core;
+                                            exports com.fasterxml.jackson.core.type;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- com.fasterxml.jackson.core -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>com.fasterxml.jackson.core</groupId>
+                                            <artifactId>jackson-databind</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module com.fasterxml.jackson.databind {
+                                            requires com.fasterxml.jackson.core;
+                                            exports com.fasterxml.jackson.databind.module;
+                                            exports com.fasterxml.jackson.databind;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- com.fasterxml.jackson.databind -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>com.fasterxml.jackson.core</groupId>
+                                            <artifactId>jackson-annotations</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module com.fasterxml.jackson.annotations {
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- com.fasterxml.jackson.annotations -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.hibernate</groupId>
+                                            <artifactId>hibernate-core</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module org.hibernate.orm.core {
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- hibernate.core -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.hibernate</groupId>
+                                            <artifactId>hibernate-entitymanager</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module hibernate.entitymanager {
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- hibernate.entitymanager -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.hibernate.common</groupId>
+                                            <artifactId>hibernate-commons-annotations</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module org.hibernate.commons.annotations {
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- hibernate.entitymanager -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>javax.validation</groupId>
+                                            <artifactId>validation-api</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module java.validation {
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- java.validation -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.springframework</groupId>
+                                            <artifactId>spring-jcl</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module spring.jcl {
+                                            requires org.apache.logging.log4j;
+                                            exports org.apache.commons.logging;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- spring.jcl -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.springframework</groupId>
+                                            <artifactId>spring-core</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module spring.core {
+                                            exports org.springframework.cglib.reflect;
+                                            exports org.springframework.util.comparator;
+                                            exports org.springframework.asm;
+                                            exports org.springframework.cglib.core;
+                                            exports org.springframework.cglib.proxy;
+                                            exports org.springframework.cglib.transform;
+                                            exports org.springframework.core;
+                                            exports org.springframework.core.annotation;
+                                            exports org.springframework.core.convert;
+                                            exports org.springframework.core.convert.converter;
+                                            exports org.springframework.core.convert.support;
+                                            exports org.springframework.core.env;
+                                            exports org.springframework.core.io;
+                                            exports org.springframework.core.io.support;
+                                            exports org.springframework.core.type;
+                                            exports org.springframework.core.type.filter;
+                                            exports org.springframework.core.type.classreading;
+                                            exports org.springframework.objenesis;
+                                            exports org.springframework.util;
+                                            exports org.springframework.util.xml;
+                                            requires aspectjrt;
+                                            requires javassist;
+                                            requires jdk.jconsole;
+                                            requires java.desktop;
+                                            requires java.management;
+                                            requires java.xml;
+                                            requires spring.jcl;
+                                            <!--requires transitive install;-->
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- spring.core -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.springframework</groupId>
+                                            <artifactId>spring-beans</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            open module spring.beans {
+                                            exports org.springframework.beans.factory.wiring;
+                                            exports org.springframework.beans;
+                                            exports org.springframework.beans.factory;
+                                            exports org.springframework.beans.factory.annotation;
+                                            exports org.springframework.beans.factory.config;
+                                            exports org.springframework.beans.factory.support;
+                                            exports org.springframework.beans.factory.parsing;
+                                            exports org.springframework.beans.factory.xml;
+                                            exports org.springframework.beans.propertyeditors;
+                                            exports org.springframework.beans.support;
+                                            requires java.management.rmi;
+                                            requires java.desktop;
+                                            requires spring.core;
+                                            requires spring.jcl;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- spring.beans -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.springframework</groupId>
+                                            <artifactId>spring-aop</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module spring.aop {
+                                            exports org.springframework.aop.config;
+                                            exports org.springframework.aop.framework;
+                                            exports org.springframework.aop.framework.autoproxy;
+                                            exports org.springframework.aop.support;
+                                            exports org.springframework.aop.aspectj.annotation;
+                                            opens org.aopalliance.intercept to spring.tx;
+                                            requires spring.beans;
+                                            requires spring.core;
+                                            requires spring.jcl;
+                                            requires aspectjrt;
+                                            exports org.springframework.aop.scope;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- spring.aop -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.springframework</groupId>
+                                            <artifactId>spring-expression</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module spring.expression {
+                                            exports org.springframework.expression;
+                                            exports org.springframework.expression.spel;
+                                            exports org.springframework.expression.spel.standard;
+                                            exports org.springframework.expression.spel.support;
+                                            requires spring.core;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- spring.expression -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.springframework</groupId>
+                                            <artifactId>spring-context</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module spring.context {
+                                            opens org.springframework.context.support to spring.core;
+                                            requires java.naming;
+                                            exports org.springframework.validation.annotation;
+                                            exports org.springframework.ui.context.support;
+                                            exports org.springframework.validation;
+                                            exports org.springframework.jndi;
+                                            exports org.springframework.context.annotation;
+                                            exports org.springframework.context.event;
+                                            exports org.springframework.context.support;
+                                            exports org.springframework.context;
+                                            exports org.springframework.format.support;
+                                            exports org.springframework.format;
+                                            exports org.springframework.jmx.export.naming;
+                                            exports org.springframework.stereotype;
+                                            exports org.springframework.ui.context;
+                                            opens org.springframework.context.annotation to spring.core, spring.beans, certytech.certyprint.install;
+                                            opens org.springframework.instrument.classloading to spring.data.jpa;
+                                            requires java.desktop;
+                                            requires spring.aop;
+                                            requires spring.beans;
+                                            requires spring.core;
+                                            requires spring.expression;
+                                            requires spring.jcl;
+                                            requires java.annotation;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- spring.context -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.springframework</groupId>
+                                            <artifactId>spring-tx</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module spring.tx {
+                                            exports org.springframework.dao.support;
+                                            exports org.springframework.transaction.annotation;
+                                            opens org.springframework.transaction.support to spring.orm;
+                                            requires spring.context;
+                                            requires spring.core;
+                                            requires spring.aop;
+                                            requires spring.beans;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- spring.tx -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.springframework</groupId>
+                                            <artifactId>spring-jdbc</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module spring.jdbc {
+                                            exports org.springframework.jdbc.datasource.embedded;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- spring.jdbc -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.springframework</groupId>
+                                            <artifactId>spring-orm</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module spring.orm {
+                                            exports org.springframework.orm.jpa;
+                                            exports org.springframework.orm.jpa.support;
+                                            opens org.springframework.orm.jpa;
+                                            requires spring.beans;
+                                            requires spring.core;
+                                            requires spring.tx;
+                                            requires java.persistence;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- spring.orm -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.aspectj</groupId>
+                                            <artifactId>aspectjrt</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module aspectjrt {
+                                            exports org.aspectj.lang.annotation;
+                                            exports org.aspectj.lang;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- aspectjrt -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.aspectj</groupId>
+                                            <artifactId>aspectjweaver</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module aspectjweaver {
+                                            exports org.aspectj.lang.annotation;
+                                            exports org.aspectj.lang;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- aspectjweaver -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.springframework.data</groupId>
+                                            <artifactId>spring-data-commons</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module spring.data.commons {
+                                            exports org.springframework.data.auditing.config;
+                                            exports org.springframework.data.config;
+                                            exports org.springframework.data.mapping.context;
+                                            exports org.springframework.data.mapping;
+                                            opens org.springframework.data.repository.core.support to spring.data.jpa;
+                                            opens org.springframework.data.repository.config to spring.data.jpa;
+                                            requires slf4j.api;
+                                            requires spring.beans;
+                                            requires spring.context;
+                                            requires spring.core;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- spring.data.commons -->
+                                    <module>
+                                        <artifact>
+                                            <groupId>org.springframework.data</groupId>
+                                            <artifactId>spring-data-jpa</artifactId>
+                                        </artifact>
+                                        <moduleInfoSource>
+                                            module spring.data.jpa {
+                                            exports org.springframework.data.jpa.domain.support;
+                                            opens org.springframework.data.jpa.repository.config to spring.core;
+                                            //requires spring.aspects;
+                                            requires spring.beans;
+                                            requires spring.context;
+                                            requires spring.core;
+                                            requires spring.data.commons;
+                                            requires spring.orm;
+                                            requires java.persistence;
+                                            requires java.management.rmi;
+                                            }
+                                        </moduleInfoSource>
+                                    </module> <!-- spring.data.jpa -->
+                                </modules>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>create-runtime-image</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>create-runtime-image</goal>
+                            </goals>
+                            <configuration>
+                                <modulePath>
+                                    <path>${project.build.directory}/classes</path>
+                                    <path>${project.build.directory}/modules</path>
+                                </modulePath>
+                                <modules>
+                                    <module>${moduleName}</module>
+                                </modules>
+                                <launcher>
+                                    <name>install</name>
+                                    <module>${moduleName}/${mainClass}</module>
+                                </launcher>
+                                <compression>2</compression>
+                                <outputDirectory>
+                                    ${project.build.directory}/jlink-image
+                                </outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>3.1.1</version>
+                    <executions>
+                        <execution>
+                            <id>copy-dependencies</id>
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${project.build.directory}/modules</outputDirectory>
+                                <includeScope>runtime</includeScope>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+            </plugins>
+        </build>
+    </project>
